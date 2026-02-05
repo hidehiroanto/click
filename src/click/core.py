@@ -2795,10 +2795,10 @@ class Option(Parameter):
             if type is None:
                 # A flag without a flag_value is a boolean flag.
                 if flag_value is UNSET:
-                    self.type: types.ParamType = types.BoolParamType()
-                # If the flag value is a boolean, use BoolParamType.
+                    self.type: types.ParamType = types.BOOL
+                # If the flag value is a boolean, use BOOL.
                 elif isinstance(flag_value, bool):
-                    self.type = types.BoolParamType()
+                    self.type = types.BOOL
                 # Otherwise, guess the type from the flag value.
                 else:
                     self.type = types.convert_type(None, flag_value)
